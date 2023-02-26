@@ -26,10 +26,10 @@ The basic information about the acoustical model final.mdl is a follows:
 
 The basic information about the language mode HCLG.fst is a follows:
 
-fst type                                          const
-arc type                                          standard
-number of states                                  81604
-number of arcs                                    221650
+- fst type: const
+- arc type: standard
+- number of states: 81604
+- number of arcs: 221650
 
 # Model usage
 The availabel ASR models can used for recognizing Kaldi compatible speech recordings dataset using the following Kaldi scripts:
