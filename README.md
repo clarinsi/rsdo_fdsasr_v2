@@ -39,7 +39,7 @@ Before using the model the following model files need to be unzipped:
 ./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.txt.zip 
 ./exp/chain/tdnn/tree_1a_sp/graph_obrazi/words.txt.zip 
 
-The availabel ASR models can then used for recognizing a Kaldi compatible speech recordings dataset in the data/test_hires folder using the following Kaldi scripts:
+The availabel ASR models can then be used for recognizing a Kaldi compatible speech recordings dataset in the data/test_hires folder using the following Kaldi scripts:
 
 steps/make_mfcc.sh --nj 1 --mfcc-config conf/mfcc_hires.conf --cmd run.pl data/test_hires exp/make_mfcc/test mfcc
 steps/compute_cmvn_stats.sh data/test_hires exp/make_mfcc/test mfcc
