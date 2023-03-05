@@ -34,10 +34,10 @@ The basic information about the language mode HCLG.fst is a follows:
 # Model usage
 Before using the model the following model files need to be unzipped:
 
-./exp/chain/tdnn/tdnn1a_sp/final.mdl.zip
-./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.int.zip
-./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.txt.zip
-./exp/chain/tdnn/tree_1a_sp/graph_obrazi/words.txt.zip
+./exp/chain/tdnn/tdnn1a_sp/final.mdl.zip 
+./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.int.zip 
+./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.txt.zip 
+./exp/chain/tdnn/tree_1a_sp/graph_obrazi/words.txt.zip 
 
 The availabel ASR models can then used for recognizing a Kaldi compatible speech recordings dataset in the data/test_hires folder using the following Kaldi scripts:
 
