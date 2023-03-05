@@ -32,7 +32,14 @@ The basic information about the language mode HCLG.fst is a follows:
 - number of arcs: 221650
 
 # Model usage
-The availabel ASR models can used for recognizing a Kaldi compatible speech recordings dataset in the data/test_hires folder using the following Kaldi scripts:
+Before using the model the following model files need to be unzipped:
+
+./exp/chain/tdnn/tdnn1a_sp/final.mdl.zip
+./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.int.zip
+./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.txt.zip
+./exp/chain/tdnn/tree_1a_sp/graph_obrazi/words.txt.zip
+
+The availabel ASR models can then used for recognizing a Kaldi compatible speech recordings dataset in the data/test_hires folder using the following Kaldi scripts:
 
 steps/make_mfcc.sh --nj 1 --mfcc-config conf/mfcc_hires.conf --cmd run.pl data/test_hires exp/make_mfcc/test mfcc
 steps/compute_cmvn_stats.sh data/test_hires exp/make_mfcc/test mfcc
