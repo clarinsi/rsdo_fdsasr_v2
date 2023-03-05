@@ -32,12 +32,18 @@ The basic information about the language mode HCLG.fst is a follows:
 - number of arcs: 221650
 
 # Model usage
-The availabel ASR models can used for recognizing Kaldi compatible speech recordings dataset using the following Kaldi scripts:
+The availabel ASR models can used for recognizing a Kaldi compatible speech recordings dataset in the data/test_hires folder using the following Kaldi scripts:
 
-steps/make_mfcc.sh --nj 10 --mfcc-config conf/mfcc_hires.conf data/test_hires
+steps/make_mfcc.sh --nj 1 --mfcc-config conf/mfcc_hires.conf --cmd run.pl data/test_hires exp/make_mfcc/test mfcc
+steps/compute_cmvn_stats.sh data/test_hires exp/make_mfcc/test mfcc
 
+nspk=$(wc -l <data/test_hires/spk2utt)
 steps/nnet3/decode.sh --config conf/decode.config --acwt 1.0 --post-decode-acwt 10.0 
    --extra-left-context 0 --extra-right-context 0 --extra-left-context-initial 0 
-   --extra-right-context-final 0 --frames-per-chunk 10 --nj 10 --num-threads 1 
-   exp/obrazi/interpolirani_modeli data/test_hires exp/obrazi/decode_test
+   --extra-right-context-final 0 --frames-per-chunk 10 --nj 1 --num-threads 1 
+   exp/chain/tdnn/tree_1a_sp/graph_obrazi data/test_hires exp/chain/tdnn/tdnn1a_sp/decode_graph_obrazi_test/
    
+The above scripts can also be run using the script:
+
+local/testno_razpoznavanje_interpolirani.sh
+./rezultati
