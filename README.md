@@ -35,13 +35,17 @@ The basic information about the language mode HCLG.fst is a follows:
 Before using the model the following model files need to be unzipped:
 
 ./exp/chain/tdnn/tdnn1a_sp/final.mdl.zip 
+
 ./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.int.zip 
+
 ./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.txt.zip 
+
 ./exp/chain/tdnn/tree_1a_sp/graph_obrazi/words.txt.zip 
 
 The availabel ASR models can then be used for recognizing a Kaldi compatible speech recordings dataset in the data/test_hires folder using the following Kaldi scripts:
 
 steps/make_mfcc.sh --nj 1 --mfcc-config conf/mfcc_hires.conf --cmd run.pl data/test_hires exp/make_mfcc/test mfcc
+
 steps/compute_cmvn_stats.sh data/test_hires exp/make_mfcc/test mfcc
 
 nspk=$(wc -l <data/test_hires/spk2utt)
@@ -52,5 +56,6 @@ steps/nnet3/decode.sh --config conf/decode.config --acwt 1.0 --post-decode-acwt 
    
 The above scripts can also be run using the script:
 
-local/testno_razpoznavanje_interpolirani.sh
-./rezultati
+local/test_recognition.sh
+
+./results.sh
