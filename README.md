@@ -34,25 +34,23 @@ The basic information about the language mode HCLG.fst is a follows:
 # Model usage
 Before using the model the following model files need to be unzipped:
 
-./exp/chain/tdnn/tdnn1a_sp/final.mdl.zip 
-./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.int.zip 
-./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.txt.zip 
-./exp/chain/tdnn/tree_1a_sp/graph_obrazi/words.txt.zip 
+ $ ./exp/chain/tdnn/tdnn1a_sp/final.mdl.zip 
+ $ ./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.int.zip 
+ $ ./exp/chain/tdnn/tree_1a_sp/graph_obrazi/phones/align_lexicon.txt.zip 
+ $ ./exp/chain/tdnn/tree_1a_sp/graph_obrazi/words.txt.zip 
 
 The availabel ASR models can then be used for recognizing a Kaldi compatible speech recordings dataset in the data/test_hires folder using the following Kaldi scripts:
 
-steps/make_mfcc.sh --nj 1 --mfcc-config conf/mfcc_hires.conf --cmd run.pl data/test_hires exp/make_mfcc/test mfcc
+ $ steps/make_mfcc.sh --nj 1 --mfcc-config conf/mfcc_hires.conf --cmd run.pl data/test_hires exp/make_mfcc/test mfcc
+ $ steps/compute_cmvn_stats.sh data/test_hires exp/make_mfcc/test mfcc
 
-steps/compute_cmvn_stats.sh data/test_hires exp/make_mfcc/test mfcc
-
-nspk=$(wc -l <data/test_hires/spk2utt)
-steps/nnet3/decode.sh --config conf/decode.config --acwt 1.0 --post-decode-acwt 10.0 
+ $ nspk=$(wc -l <data/test_hires/spk2utt)
+ $ steps/nnet3/decode.sh --config conf/decode.config --acwt 1.0 --post-decode-acwt 10.0 
    --extra-left-context 0 --extra-right-context 0 --extra-left-context-initial 0 
    --extra-right-context-final 0 --frames-per-chunk 10 --nj 1 --num-threads 1 
    exp/chain/tdnn/tree_1a_sp/graph_obrazi data/test_hires exp/chain/tdnn/tdnn1a_sp/decode_graph_obrazi_test/
    
 The above scripts can also be run using the script:
 
-local/test_recognition.sh
-
-./results.sh
+ $ local/test_recognition.sh
+ $ ./results.sh
