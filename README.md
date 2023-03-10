@@ -1,8 +1,8 @@
 # Face-Domain-Specific Automatic Speech Recognition Models
 
-This repository contains all the necessary files required for implementing face-domain-specific automatic speech recognition (ASR) applications using the Kaldi toolkit, including the acoustical model, language model, and other relevant files. The repository also includes all the scripts and configuration files needed to use these models for implementing the face-domain-specific automatic speech recognition.
+This repository contains all the necessary files required for implementing face-domain-specific automatic speech recognition (ASR) applications using the Kaldi toolkit (https://github.com/kaldi-asr/kaldi), including the acoustical model, language model, and other relevant files. The repository also includes all the scripts and configuration files needed to use these models for implementing the face-domain-specific automatic speech recognition.
 
-The acoustical model was trained using the relevant Kaldi tools and the Artur speech corpus. The language model was trained using the domain-specific text data that involve face descriptions and which were obtained by translating the Face2Text English corpus into the Slovenian language. These models, combined with other necessary files like the HCLG.fst and decoding scripts, enable the implementation of face-domain-specific ASR applications.
+The acoustical model was trained using the relevant Kaldi tools and the Artur speech corpus (http://hdl.handle.net/11356/1776 and http://hdl.handle.net/11356/1772). The language model was trained using the domain-specific text data that involve face descriptions and which were obtained by translating the Face2Text English dataset (https://github.com/mtanti/face2text-dataset) into the Slovenian language. These models, combined with other necessary files like the HCLG.fst and the decoding scripts, enable the implementation of face-domain-specific ASR applications.
 
 # Prerequisites
 
@@ -59,3 +59,5 @@ The above scripts can also be run using the script:
 Finally, the recognition results can be obtained using the script:
 
      $ ./results.sh  
+     
+Additional information, models, and speech corpus that can be used to test the speech recognizer can be obtained at http://hdl.handle.net/11356/1749. 
